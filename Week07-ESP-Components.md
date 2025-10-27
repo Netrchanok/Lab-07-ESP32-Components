@@ -1,4 +1,4 @@
-# Week 07: ESP32 Components - เนื้อหาประกอบการทดลอง
+่# Week 07: ESP32 Components - เนื้อหาประกอบการทดลอง
 ## การพัฒนาซอฟต์แวร์ด้วย Component-Based Architecture
 
 **ระยะเวลาการบรรยาย:** 60 นาที  

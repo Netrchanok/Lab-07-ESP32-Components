@@ -11,14 +11,16 @@ extern "C" {
 void sensor_init(void);
 
 /**
- * @brief Read data from sensors
+ * @brief Read temperature data
+ * @return Temperature in Celsius
  */
-void sensor_read_data(void);
+float sensor_read_temperature(void);
 
 /**
- * @brief Check sensor status
+ * @brief Read humidity data
+ * @return Humidity in %
  */
-void sensor_check_status(void);
+float sensor_read_humidity(void);
 
 #ifdef __cplusplus
 }

@@ -3,19 +3,25 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "sensor.h"
+#include "display.h"
 
-static const char *TAG = "LAB7-1";
+static const char *TAG = "LAB7-CHALLENGE";
 
 void app_main(void)
 {
-    ESP_LOGI(TAG, "🚀 Lab 7-1: Local Component Demo Started");
+    ESP_LOGI(TAG, "🚀 Lab 7-1 Challenge: Sensor and Display Demo");
     
-    // เรียกใช้ฟังก์ชันจาก local component
+    // Initialize both components
     sensor_init();
+    display_init();
     
     while(1) {
-        sensor_read_data();
-        sensor_check_status();
+        // Read data from the sensor component
+        float temp = sensor_read_temperature();
+        float hum = sensor_read_humidity();
+        
+        // Show data on the display component
+        display_show_data(temp, hum);
         
         ESP_LOGI(TAG, "----------------------------");
         vTaskDelay(pdMS_TO_TICKS(3000));

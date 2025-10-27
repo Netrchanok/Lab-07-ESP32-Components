@@ -13,20 +13,18 @@ void sensor_init(void)
     ESP_LOGI(TAG, "📡 Sensor module ready for operation");
 }
 
-void sensor_read_data(void)
+float sensor_read_temperature(void)
 {
-    ESP_LOGI(TAG, "📊 Reading sensor data from file: %s, line: %d", __FILE__, __LINE__);
-    
     // จำลองการอ่านข้อมูลจาก sensor
     float temperature = 25.5 + (float)(esp_random() % 100) / 10.0f;
-    float humidity = 60.0 + (float)(esp_random() % 400) / 10.0f;
-    
-    ESP_LOGI(TAG, "🌡️  Temperature: %.1f°C", temperature);
-    ESP_LOGI(TAG, "💧 Humidity: %.1f%%", humidity);
+    ESP_LOGI(TAG, "🌡️  Temperature read: %.1f°C", temperature);
+    return temperature;
 }
 
-void sensor_check_status(void)
+float sensor_read_humidity(void)
 {
-    ESP_LOGI(TAG, "✅ Sensor status check from file: %s, line: %d", __FILE__, __LINE__);
-    ESP_LOGI(TAG, "📈 All sensors operating normally");
+    // จำลองการอ่านข้อมูลจาก sensor
+    float humidity = 60.0 + (float)(esp_random() % 400) / 10.0f;
+    ESP_LOGI(TAG, "💧 Humidity read: %.1f%%", humidity);
+    return humidity;
 }
